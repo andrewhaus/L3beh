@@ -15,9 +15,9 @@ These are the individual "things" that are in the game itself, and are a composi
 Components are meant to be very simple structs that encapsulate some state data (for example the Transform component stores the position, rotation, and scale of the entity). An entity that is specified to have a component will have an instance of said component be created and stored/kept track of by the engine.
 
 **Systems**
-Systems are where game logic is to be stored. Systems are to be provided a list of required components (represented as a bitfield) that allow the System to decide which entities it is allowed to act upon. A System can have multiple acceptable required component bitsets (For example, the CollisionSystem can accept entities with SphereCollider, Transform, and Physics OR BoxCollider, Transform, and Physics). 
+Systems are where game logic is to be stored. Systems are to be provided a list of required components (represented as a bitfield) that allow the System to decide which entities it is allowed to act upon. A System can have multiple acceptable required component bitsets (For example, the CollisionSystem can accept entities with SphereCollider, Transform, and Physics OR BoxCollider, Transform, and Physics).
 
- - Each System has an addEntity() function which you can override to modify how the list of entities it accepts is organized. 
+ - Each System has an addEntity() function which you can override to modify how the list of entities it accepts is organized.
  - There is also a removeEntity() function that you can override to cleanup entities that no longer fit within the systems component requirements.
  - The init() function is called once at the beginning of the game and can be override to do initial setup of entities
 
@@ -50,12 +50,12 @@ The component instances themselves will as a result be stored linearly in memory
 
 Special care is taken when deleting entities (and deleting their specified component instances as a result) to update subsequent entities whose component instances have indexes larger than the one deleted; since everything is contiguous in memory a deletion will shift all subsequent components down, thus invalidating the handle we currently stored for entities that correspond to those component instances.
 
-A single world object has a single ComponentManager instance which is used to register/store the components of entities within that world. Functions that provide this functionality are: 
+A single world object has a single ComponentManager instance which is used to register/store the components of entities within that world. Functions that provide this functionality are:
 
  - **registerComponent()**: Gives a new component type a specific ID as well as creating a vector in the componentHolder to store component instances
  - **addComponent()**: A templated function that allows the programmer to add a specified component type to a given entity. This function can be called by providing the entity ID and an already initialized instance of the component type you want to add, or it can be called without a component instance, and will instead will add a component instance with default parameters.
  - **setComponent()**: Allows you to replace an already existing component that an entity has with a new instance of the component that you pass in.
- - **removeComponent()**: Removes a component from an entity entirely and removes it from corresponding systems as well. 
+ - **removeComponent()**: Removes a component from an entity entirely and removes it from corresponding systems as well.
  - **destroyEntity()**: A function which removes an entity entirely from the world; deleting all of it's corresponding components and removing it from all systems. This will also remove the entity ID from the living_entities set in the world. The actual destruction of the entity occurs at the end of the frame this function is called in.
  - **getComponent()**: A templated function that returns a reference to a specified component for an entity given it's entity ID. This allows the programmer to read or update that component's information
 
@@ -89,3 +89,5 @@ When implementing a new System, the workflow looks something like this:
  2. Implement a constructor which takes in a World pointer as an argument; set the mWorld member variable of the system equal to that world and then define all the required componentSignatures that you need entities to have, adding them to the neededComponentSignatures vector
  3. Override the addEntity(), removeEntity() functions if you have a specific organization for systems in mind
  4. Implement the init() and update() functions with the necessary game logic you want entities in this system to exercise
+
++1
