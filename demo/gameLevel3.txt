@@ -1,0 +1,140 @@
+Entity PlayerCamera
+PlayerMovement 0 1
+Physics 0 0 0 0.1     1 1 1   0 0 0
+SphereCollider 0   0 0 0    1
+Transform 0    0 0 0   0 0 0  1 1 1
+Camera 1 110
+/Entity
+
+Entity PlayerOne
+PlayerMovement 1 0
+Physics 0.1 1 1 .1   1 0 0  0 0 0
+SphereCollider 0   0 0 0    1
+Transform 0    -36 -2 -8   0 0 0  1 1 .1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity Light
+Transform 1    0 0 -3   0 0 0  1 1 1
+PointLight 1 1 1 1
+/Entity
+
+Entity Light
+DirectionalLight 1 1 1   -.75 -.75 -1
+/Entity
+
+Entity Floor
+Physics 0 0 1 1     1 1 1   0 0 0
+BoxCollider 0    0 0 0   100 52 100
+Transform 0    -34 -70 -18   0 0 0  200 90 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity WallLeft
+Physics 0 0 1 .2     1 1 1   0 0 0
+BoxCollider 0     0 0 0   .5 5 5
+Transform 0    -85 -1 -18   0 0 0  50 200 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity WallRight
+Physics 0 0 1 .2     1 1 1   0 0 0
+BoxCollider 0     0 0 0   100 26 100
+Transform 0    85 -5 -18   0 0 0  200 40 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity WallRightJump
+Physics 0 0 1 .2     1 1 1   0 0 0
+BoxCollider 0     0 0 0   95 26 100
+Transform 0    310 -5 -18   0 0 0  200 40 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity WallTop
+Physics 0 0 1 .2     1 1 1   0 0 0
+BoxCollider 0     0 0 0   95 23 100
+Transform 0    85 69 -18   0 0 0  200 40 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity WallTopJump
+Physics 0 0 1 .2     1 1 1   0 0 0
+BoxCollider 0     0 0 0   95 23 100
+Transform 0    200 69 -18   0 0 0  200 40 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity JumpThree
+Physics 0 0 1 .2     1 1 1   0 0 0
+BoxCollider 0     0 0 0   5 12 100
+Transform 0    40 18 -18   0 0 0  20 10 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity JumpThree2
+Physics 0 0 1 .2     1 1 1   0 0 0
+BoxCollider 0     0 0 0   5 0 100
+Transform 0    40 45 -18   0 0 0  20 10 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity JumpOne
+Physics 0 0 1 0     1 1 1   0 0 0
+BoxCollider 0     12 1 0   8 7 100
+Transform 0    -50 -13 -18   0 0 0  24 1 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity JumpTwo
+Physics 0 0 1 0     1 1 1   0 0 0
+BoxCollider 0     12 1 0   8 7 100
+Transform 0    -25 -1 -18   0 0 0  23 1 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity JumpOnePart2
+Physics 0 0 1 0     1 1 1   0 0 0
+BoxCollider 0     0 0 0   4.5 2 .5
+Transform 0     124 17 -18  0 0 0  15 8 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity JumpTwoPart2
+Physics 0 0 1 0     1 1 1   0 0 0
+BoxCollider 0     0 0 0   4.5 2.75 .5
+Transform 0     139 18 -18   0 0 0  15 14 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity JumpThreePart2
+Physics 0 0 1 0     1 1 1   0 0 0
+BoxCollider 0     0 0 0   4.5 4 .5
+Transform 0     154 18 -18   0 0 0  15 20 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity Background
+Physics 0 0 1 .2     1 1 1   0 0 0
+Transform 0    -60 -1 -25   0 0 0  200 250 1
+Render cube.obj nightsky.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity Background
+Physics 0 0 1 .2     1 1 1   0 0 0
+Transform 0    140 100 -25   0 0 0  300 250 1
+Render cube.obj background2d.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity Background
+Physics 0 0 1 .2     1 1 1   0 0 0
+Transform 0    440 100 -25   0 0 0  300 250 1
+Render cube.obj background2d.jpg 1 1 1 1 1 1 2
+/Entity
+
+Entity WallRightSecondClimb
+Physics 0 0 1 .2     1 1 1   0 0 0
+BoxCollider 0     0 0 0   95 26 100
+Transform 0    450 30 -18   0 0 0  200 80 1
+Render cube.obj cube.jpg 1 1 1 1 1 1 2
+/Entity
